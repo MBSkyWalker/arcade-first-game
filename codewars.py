@@ -84,10 +84,12 @@ class MyGame(arcade.Window):
             coin.center_y += 1
             if coin.center_y > SCREEN_HEIGHT:
                 coin.center_y = 0
+                coin.center_x = random.randrange(50, SCREEN_WIDTH + 50)
 
         for stone in self.stone_list:
             stone.center_x += 1
-            if stone.center_x > SCREEN_WIDTH:
+            stone.center_y += random.randrange(-1, 2,)
+            if stone.center_x > SCREEN_WIDTH or stone.center_y > SCREEN_HEIGHT:
                 stone.center_x = 0
 
         hit_list_good = arcade.check_for_collision_with_list(self.player_sprite, self.coin_list)
