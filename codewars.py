@@ -14,6 +14,7 @@ NUMBER_OF_COINS = 20
 UPDATES_PER_FRAME = 5
 RIGHT_FACING = 0
 LEFT_FACING = 1
+SOUND_FOR_COLLECT_COINS = arcade.load_sound(':resources:sounds/coin2.wav')
 def load_texture_pair(filename):
     """
     Load a texture pair, with the second being a mirror image.
@@ -325,6 +326,7 @@ class MyGame(arcade.Window):
         self.player_list.update_animation()
         hit_list_good = arcade.check_for_collision_with_list(self.player_sprite, self.coin_list)
         for coin in hit_list_good:
+            arcade.play_sound(SOUND_FOR_COLLECT_COINS)
             # arcade.play_sound(COIN_COLLECT_SOUND)
             coin.remove_from_sprite_lists()
             self.score += 1
