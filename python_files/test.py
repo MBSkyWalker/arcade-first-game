@@ -73,3 +73,16 @@ def bfs(visited, graph, node): #function for BFS
 # Driver Code
 print("Following is the Breadth-First Search")
 bfs(visited, graph, '5')    # function calling
+
+
+from pyglet.math import Vec2
+
+# Створюємо два вектори
+vector1 = Vec2(3, 4)
+vector2 = Vec2(1, 2)
+
+# Додавання векторів
+result_vector = vector1 + vector2
+
+# Виводимо результат
+print(f"Результат додавання: ({result_vector.x}, {result_vector.y})")
